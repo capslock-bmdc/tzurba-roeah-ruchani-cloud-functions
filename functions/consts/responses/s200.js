@@ -1,4 +1,4 @@
-const Response = require("../../models/Response");
+const Response = require("../models/Response");
 
 const s200 = {
   GENERAL_SUCCESS: new Response(

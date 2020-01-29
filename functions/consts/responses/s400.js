@@ -1,4 +1,4 @@
-const Response = require("../../models/Response");
+const Response = require("../models/Response");
 
 const s400 = {
   A_CLIENT_ERROR: new Response(

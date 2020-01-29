@@ -1,4 +1,4 @@
-const Response = require("../../models/Response");
+const Response = require("../models/Response");
 
 const s500 = {
   UNKNOWN_ERROR: new Response(

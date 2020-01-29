@@ -1,4 +1,4 @@
-const { PROJECT_NAME } = require("../../config");
+const { PROJECT_NAME } = require("../config");
 
 class Response {
   constructor(status, code, message = "", data = {}) {

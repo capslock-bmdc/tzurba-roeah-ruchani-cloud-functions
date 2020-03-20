@@ -2,13 +2,13 @@ const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const responses = require("../../consts/responses/responses");
 const userUtil = require("../../utils/user");
-
+const tzUtil = require("../../utils/tz");
 exports.checkInvite = functions.https.onCall(async (data, context) => {
   try {
     const userId = context.auth.uid;
     const tz = data.tz;
     await userUtil.validateUserId(userId);
-    await userUtil.validateUserTz(tz);
+    await tzUtil.validateTz(tz);
     
     const db = admin.firestore();
     const invitesCollection = db.collection("invites");

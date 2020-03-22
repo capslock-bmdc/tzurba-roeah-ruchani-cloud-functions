@@ -6,24 +6,18 @@ const validateTz = (tz) => {
     var id = new Array();
     var validID = new Array();
     var asistID = [1, 2, 1, 2, 1, 2, 1, 2, 1];
-    if (!goodLength(id_s) || !allnumeric(id_s)){
+    if (!goodLength(id_s) || !allNumeric(id_s)){
         id_s = "INVALID";
     }
     id = convertStringToIntArray(id_s);          
     validID = multipliedArr(id, asistID);       
     validID = organizeMultipliedArr(validID);   
     sum = arraySum(validID);
-    if (finalCheck(sum)) {
-      return true;
-    }
-    else{
-        return false;
-    }
+    return finalCheck(sum);
     
 }
-function finalCheck (number_){
-    if ((number_ % 10) == 0) return true;
-    else return false;
+function finalCheck (_number){
+  return ((_number % 10) == 0);
   }
   function arraySum (d = new Array){
     let sum = 0;
@@ -65,15 +59,9 @@ function finalCheck (number_){
         return intarr;
   }
   function goodLength (str){
-    if (str.length == 0 || str.length >9){
-      return false;
-    }
-    else
-    {
-      return true;
-    }
+    return (str.length > 0 && str.length <=9);
   }
-  function allnumeric(str)
+  function allNumeric(str)
      {
        let c = 0;
       for (let i = 0; i < str.length; i++) {
@@ -81,11 +69,7 @@ function finalCheck (number_){
           c++;
         }
       }
-      if (c==str.length) {
-        return true;
-      } else {
-        return false;
-      }
+      return (c == str.length);
      }
   
 
